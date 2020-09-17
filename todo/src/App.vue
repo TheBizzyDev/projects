@@ -3,20 +3,13 @@
     <v-app>
       <v-main>
         <v-container>
-          <v-card class="mx-auto px-16" max-width="650">
+          <v-card class="mx-auto px-16" max-width="700">
             <v-card-title class="justify-center">Todo App</v-card-title>
-
             <!-- Search Field -->
-            <app-search></app-search>
+            <app-search :todos="todos"></app-search>
 
             <!-- List of Todos -->
-            <v-layout row>
-              <v-flex>
-                <v-list  class="px-0" v-for="item in 3" :key="item">
-                  <v-list-item>Testin</v-list-item>
-                </v-list>
-              </v-flex>
-            </v-layout>
+            <app-todos :todos="todos"></app-todos>
           </v-card>
         </v-container>
       </v-main>
@@ -25,22 +18,22 @@
 </template>
 
 <script>
-
 import Search from "./components/Search.vue";
+import Todos from "./components/Todos.vue";
 
 export default {
   components: {
-    'app-search': Search,
+    "app-search": Search,
+    "app-todos": Todos
   },
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
-      
-    }
-  }
-}
+      todos: [
+                
+      ],
+    };
+  },
+};
 </script>
 
-<style lang="scss">
-
-</style>
