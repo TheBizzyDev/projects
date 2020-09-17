@@ -2,11 +2,18 @@
   <div>
     <v-layout row>
       <v-flex>
-        <v-text-field class="pr-4" label="Search" v-model="search" solo></v-text-field>
+        <v-text-field 
+          class="pr-4" 
+          label="Enter a Todo" 
+          v-model="search" 
+          solo
+          @keypress.enter="add"
+          >
+        </v-text-field>
       </v-flex>
       <v-flex xs2>
-        <v-btn block class="blue white--text" @click="add">
-          <v-icon small left>mdi-plus</v-icon>add
+        <v-btn class="blue white--text" @click="add">
+          <v-icon small>mdi-plus</v-icon>
         </v-btn>
       </v-flex>
     </v-layout>
@@ -29,6 +36,7 @@ export default {
           title: this.search,
           status: false,
         });
+        this.search = '';
       }
     },
   },
