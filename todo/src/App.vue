@@ -25,22 +25,22 @@
 </template>
 
 <script>
+
 import Search from "./components/Search.vue";
 
 export default {
   components: {
-    "app-search": Search,
+    'app-search': Search,
   },
-
-  name: "app",
-  data() {
-    return {};
-  },
-};
+  name: 'app',
+  data () {
+    return {
+      
+    }
+  }
+}
 </script>
 
-<style>
-body {
-  font-family: "Roboto";
-}
+<style lang="scss">
+
 </style>

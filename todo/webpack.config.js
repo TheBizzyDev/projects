@@ -11,34 +11,26 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.s(c|a)ss$/,
+        test: /\.css$/,
         use: [
           'vue-style-loader',
           'css-loader'
         ],
-      }, 
+      },
       {
-        test: /\.s(c|a)ss$/,
+        test: /\.scss$/,
         use: [
           'vue-style-loader',
           'css-loader',
-          {
-            loader: 'sass-loader',
-            // Requires sass-loader@^7.0.0
-            options: {
-              implementation: require('sass'),
-              fiber: require('fibers'),
-              indentedSyntax: true // optional
-            },
-            // Requires sass-loader@^8.0.0
-            options: {
-              implementation: require('sass'),
-              sassOptions: {
-                fiber: require('fibers'),
-                indentedSyntax: true // optional
-              },
-            },
-          },
+          'sass-loader'
+        ],
+      },
+      {
+        test: /\.sass$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader?indentedSyntax'
         ],
       },
       {
@@ -46,6 +38,19 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
+            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
+            // the "scss" and "sass" values for the lang attribute to the right configs here.
+            // other preprocessors should work out of the box, no loader config like this necessary.
+            'scss': [
+              'vue-style-loader',
+              'css-loader',
+              'sass-loader'
+            ],
+            'sass': [
+              'vue-style-loader',
+              'css-loader',
+              'sass-loader?indentedSyntax'
+            ]
           }
           // other vue-loader options go here
         }
