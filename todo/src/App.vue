@@ -13,7 +13,7 @@
             <v-layout row>
               <v-flex>
                 <v-list  class="px-0" v-for="item in 3" :key="item">
-                  <v-list-item>Testing</v-list-item>
+                  <v-list-item>Testin</v-list-item>
                 </v-list>
               </v-flex>
             </v-layout>
