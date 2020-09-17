@@ -12,7 +12,7 @@
       
       <v-flex xs2>
         <v-btn block class="blue white--text">
-          <v-icon small left>mdi-plus</v-icon>Add
+          <v-icon small left>mdi-plus</v-icon>plus
         </v-btn>
       </v-flex>
       
