@@ -6,7 +6,7 @@
           label="Enter a Todo" 
           v-model="search"
           solo
-          @keypress.enter="ad"
+          @keypress.enter="add"
           >
         </v-text-field>
       </v-flex>
