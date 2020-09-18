@@ -4,12 +4,14 @@
       <v-main>
         <v-container>
           <v-card class="mx-auto px-16" max-width="700">
-            <v-card-title class="justify-center">Todo App</v-card-title>
-            <!-- Search Field -->
-            <app-search :todos="todos"></app-search>
+            <v-container>
+              <v-card-title class="justify-center">Todo App</v-card-title>
+              <!-- Search Field -->
+              <app-search :todos="todos"></app-search>
 
-            <!-- List of Todos -->
-            <app-todos :todos="todos"></app-todos>
+              <!-- List of Todos -->
+              <app-todos :todos="todos"></app-todos>
+            </v-container>
           </v-card>
         </v-container>
       </v-main>
@@ -24,16 +26,18 @@ import Todos from "./components/Todos.vue";
 export default {
   components: {
     "app-search": Search,
-    "app-todos": Todos
+    "app-todos": Todos,
   },
   name: "app",
   data() {
     return {
-      todos: [
-                
-      ],
+      todos: [],
     };
   },
 };
 </script>
+
+<style lang="scss">
+
+</style>
 

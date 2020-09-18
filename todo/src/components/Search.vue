@@ -1,18 +1,17 @@
 <template>
   <div>
-    <v-layout row>
-      <v-flex>
-        <v-text-field 
-          class="pr-4" 
+    <v-layout row wrap align-baseline>
+      <v-flex class="pr-3">
+        <v-text-field
           label="Enter a Todo" 
-          v-model="search" 
+          v-model="search"
           solo
           @keypress.enter="add"
           >
         </v-text-field>
       </v-flex>
       <v-flex xs2>
-        <v-btn class="blue white--text" @click="add">
+        <v-btn block class="blue white--text" @click="add">
           <v-icon small>mdi-plus</v-icon>
         </v-btn>
       </v-flex>
@@ -39,9 +38,11 @@ export default {
         this.search = '';
       }
     },
-  },
+  }
 };
 </script>
 
-<style>
+<style lang="scss">
+
+
 </style>
