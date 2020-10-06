@@ -4,30 +4,35 @@
       <div class="card-home">
         <div class="hero">
           <div class="hero-city">
-            <h5 class="hero-city-location">London, England</h5>
+            <transition name="fade" appear>
+              <h5 class="hero-city-location">{{ response }}</h5>
+            </transition>
           </div>
-          <div class="hero-content">
-            <h1 class="hero-content-deg">23</h1>
-            <p class="hero-content-weather">Los Angeles</p>
-          </div>
+          <transition name="fade" appear>
+            <div class="hero-content">
+              <h1 class="hero-content-deg" name="fade" appear>{{ temp }}</h1>
+              <p class="hero-content-weather" appear>{{ desc }}</p>
+            </div>
+          </transition>
         </div>
 
         <div class="content">
           <div class="search">
-            <input class="search-input" type="text" placeholder="Search">
-              
+            <input
+              v-model="city"
+              class="search-input"
+              type="text"
+              placeholder="Search"
+            />
             <div class="search-result">
               <ul class="search-result-list">
-                <li class="search-result-item">
-
-
-                </li>
+                <li class="search-result-item"></li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div class="cta">
+        <div class="cta" @click="callCity">
           <p class="cta-add"><i class="fa fa-plus mx-2"></i>Add Location</p>
         </div>
       </div>
@@ -40,14 +45,64 @@ export default {
   name: "app",
   data() {
     return {
-
+      city: "",
+      response: "",
+      temp: "",
+      desc: "",
     };
+  },
+  methods: {
+    callCity() {
+      this.city = this.city.trim();
+
+      if (this.city !== "" && this.city !== undefined && this.city !== null) {
+        axios
+          .get(
+            `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=eab7ae92a4cfd01790d59291657d4d92`
+          )
+          .then((response) => {
+            let temp = response.data.main.temp;
+
+            temp = ((temp - 273.15) * 9) / 5 + 32;
+
+            this.temp = temp.toFixed(0);
+
+            this.response = response.data.name;
+
+            this.desc = response.data.weather[0].description;
+          })
+          .catch((error) => console.log(error));
+
+        this.city = "";
+      }
+    },
+  },
+
+  mounted: function () {
+    axios
+      .get(
+        "https://api.openweathermap.org/data/2.5/weather?q=atlanta&appid=eab7ae92a4cfd01790d59291657d4d92"
+      )
+      .then((response) => {
+        this.response = response.data.name;
+
+        let temp = response.data.main.temp;
+
+        temp = ((temp - 273.15) * 9) / 5 + 32;
+
+        this.temp = temp.toFixed(0);
+
+        this.response = response.data.name;
+
+        this.desc = response.data.weather[0].description;
+      });
   },
 };
 </script>
 
 <style lang="scss">
-*, p {
+*,
+p {
   margin: 0;
   padding: 0;
 }
@@ -59,7 +114,12 @@ body {
 }
 
 .test {
-  background: linear-gradient(90deg, rgba(132,130,177,1) 0%, rgba(218,238,255,1) 100%, rgba(155,155,203,0.7147233893557423) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(132, 130, 177, 1) 0%,
+    rgba(218, 238, 255, 1) 100%,
+    rgba(155, 155, 203, 0.7147233893557423) 100%
+  );
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -74,6 +134,7 @@ body {
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
+  transition: 0.2s all;
 }
 
 .hero {
@@ -91,16 +152,16 @@ body {
 
 .hero-content {
   font-size: 1.5em;
-  line-height: .2em;
+  line-height: 0.2em;
 }
 
 .hero-content-deg:after {
-    position: absolute;
-    content: "\00B0";
+  position: absolute;
+  content: "\00B0";
 }
 
 .hero-content-deg {
-  font-weight: bold;  
+  font-weight: bold;
 }
 
 .hero-content-weather {
@@ -108,16 +169,21 @@ body {
   left: 39%;
 }
 
-
 .content {
-  height: 300px;
+  height: 100px;
   background-color: #eef2f7;
 }
 
 .cta {
-  background: rgb(94,92,138);
+  background: rgb(94, 92, 138);
   padding: 25px;
   border-radius: 0 0 10px 10px;
+}
+
+.cta:active {
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
 }
 
 .cta:hover {
@@ -128,19 +194,22 @@ body {
 }
 
 .search {
-  padding: 30px;
-
+  padding: 25px;
 }
 
 .search-input {
   display: block;
-  padding: 10px 15px;
+  padding: 5px 15px;
   width: 100%;
   border-radius: 10px;
   outline: none;
-  border: .5px solid rgba(80, 78, 117, 0.308);
+  border: 0.5px solid rgba(80, 78, 117, 0.308);
 }
 
-
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>
