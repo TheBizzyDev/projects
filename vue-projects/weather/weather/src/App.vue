@@ -95,7 +95,7 @@ body {
 }
 
 .hero-content-deg:after {
-    position: fixed;
+    position: absolute;
     content: "\00B0";
 }
 
@@ -129,11 +129,12 @@ body {
 
 .search {
   padding: 30px;
+
 }
 
 .search-input {
   display: block;
-  padding: 10px;
+  padding: 10px 15px;
   width: 100%;
   border-radius: 10px;
   outline: none;
