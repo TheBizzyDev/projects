@@ -4,22 +4,24 @@
       <div class="card-home">
         <div class="hero">
           <div class="hero-city">
-            <transition name="fade" appear>
-              <h5 class="hero-city-location">{{ response }}</h5>
+            <transition name="fade" mode="out-in" appear>
+              <h5 class="hero-city-location">{{ city }}, {{ country }}</h5>
             </transition>
           </div>
-          <transition name="fade" appear>
-            <div class="hero-content">
-              <h1 class="hero-content-deg" name="fade" appear>{{ temp }}</h1>
-              <p class="hero-content-weather" appear>{{ desc }}</p>
+
+          <transition name="fade" mode="out-in" appear>
+            <div class="hero-content" appear>
+                <h1 class="hero-content-deg" name="fade">{{ temp }}</h1>
+                <p class="hero-content-weather">{{ desc }}</p>
             </div>
           </transition>
+              
         </div>
 
         <div class="content">
           <div class="search">
             <input
-              v-model="city"
+              v-model="citySearch"
               class="search-input"
               type="text"
               placeholder="Search"
@@ -45,58 +47,70 @@ export default {
   name: "app",
   data() {
     return {
+      citySearch: "",
       city: "",
-      response: "",
+      country: '',
       temp: "",
       desc: "",
     };
   },
-  methods: {
-    callCity() {
-      this.city = this.city.trim();
-
-      if (this.city !== "" && this.city !== undefined && this.city !== null) {
-        axios
-          .get(
-            `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=eab7ae92a4cfd01790d59291657d4d92`
-          )
-          .then((response) => {
-            let temp = response.data.main.temp;
-
-            temp = ((temp - 273.15) * 9) / 5 + 32;
-
-            this.temp = temp.toFixed(0);
-
-            this.response = response.data.name;
-
-            this.desc = response.data.weather[0].description;
-          })
-          .catch((error) => console.log(error));
-
-        this.city = "";
-      }
-    },
-  },
-
   mounted: function () {
     axios
       .get(
         "https://api.openweathermap.org/data/2.5/weather?q=atlanta&appid=eab7ae92a4cfd01790d59291657d4d92"
       )
       .then((response) => {
+        
         this.response = response.data.name;
 
         let temp = response.data.main.temp;
 
-        temp = ((temp - 273.15) * 9) / 5 + 32;
+        let formula = ((temp - 273.15) * 9) / 5 + 32;
+      
+        this.temp = formula.toFixed(0);
 
-        this.temp = temp.toFixed(0);
+        this.city = response.data.name;
 
-        this.response = response.data.name;
+        this.country = response.data.sys.country;
 
         this.desc = response.data.weather[0].description;
       });
   },
+
+  methods: {
+
+    
+    callCity() {
+      this.citySearch = this.citySearch.trim();
+
+      if (this.citySearch !== "" && this.citySearch !== undefined && this.citySearch !== null) {
+        axios
+          .get(
+            `https://api.openweathermap.org/data/2.5/weather?q=${this.citySearch}&appid=eab7ae92a4cfd01790d59291657d4d92`
+          )
+          .then((response) => {
+            
+            let temp = response.data.main.temp;
+
+            let formula = ((temp - 273.15) * 9) / 5 + 32;
+      
+            this.temp = formula.toFixed(0);
+
+            this.city = response.data.name;
+
+            this.desc = response.data.weather[0].description;
+
+            this.country = response.data.sys.country;
+            
+          })
+          .catch((error) => console.log(error));
+
+        this.citySearch = "";
+      }
+    },
+        
+  },
+  
 };
 </script>
 
@@ -205,6 +219,8 @@ body {
   outline: none;
   border: 0.5px solid rgba(80, 78, 117, 0.308);
 }
+
+
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
