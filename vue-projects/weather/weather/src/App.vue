@@ -3,21 +3,9 @@
     <div class="test">
       <div class="card-home">
         <div class="hero">
-          <div class="hero-city">
-            <transition name="fade" mode="out-in" appear>
-              <h5 class="hero-city-location">{{ city }}, {{ country }}</h5>
-            </transition>
-          </div>
-
-          <transition name="fade" mode="out-in" appear>
-            <div class="hero-content" appear>
-                <h1 class="hero-content-deg" name="fade">{{ temp }}</h1>
-                <p class="hero-content-weather">{{ desc }}</p>
-            </div>
-          </transition>
-              
+          <app-city :city="city" :country="country"></app-city>
+          <app-temp :desc="desc" :temp="temp"></app-temp>
         </div>
-
         <div class="content">
           <div class="search">
             <input
@@ -26,11 +14,6 @@
               type="text"
               placeholder="Search"
             />
-            <div class="search-result">
-              <ul class="search-result-list">
-                <li class="search-result-item"></li>
-              </ul>
-            </div>
           </div>
         </div>
 
@@ -43,15 +26,24 @@
 </template>
 
 <script>
+import City from "./components/City.vue";
+import Temp from "./components/Temp.vue";
+
 export default {
+  components: {
+    "app-city": City,
+    "app-temp": Temp,
+  },
+
   name: "app",
   data() {
     return {
       citySearch: "",
       city: "",
-      country: '',
+      country: "",
       temp: "",
       desc: "",
+      icon: "",
     };
   },
   mounted: function () {
@@ -60,13 +52,16 @@ export default {
         "https://api.openweathermap.org/data/2.5/weather?q=atlanta&appid=eab7ae92a4cfd01790d59291657d4d92"
       )
       .then((response) => {
-        
         this.response = response.data.name;
+
+        console.log(response);
+
+        this.icon = response.data.weather[0].icon;
 
         let temp = response.data.main.temp;
 
         let formula = ((temp - 273.15) * 9) / 5 + 32;
-      
+
         this.temp = formula.toFixed(0);
 
         this.city = response.data.name;
@@ -78,22 +73,23 @@ export default {
   },
 
   methods: {
-
-    
     callCity() {
       this.citySearch = this.citySearch.trim();
 
-      if (this.citySearch !== "" && this.citySearch !== undefined && this.citySearch !== null) {
+      if (
+        this.citySearch !== "" &&
+        this.citySearch !== undefined &&
+        this.citySearch !== null
+      ) {
         axios
           .get(
             `https://api.openweathermap.org/data/2.5/weather?q=${this.citySearch}&appid=eab7ae92a4cfd01790d59291657d4d92`
           )
           .then((response) => {
-            
             let temp = response.data.main.temp;
 
             let formula = ((temp - 273.15) * 9) / 5 + 32;
-      
+
             this.temp = formula.toFixed(0);
 
             this.city = response.data.name;
@@ -101,22 +97,24 @@ export default {
             this.desc = response.data.weather[0].description;
 
             this.country = response.data.sys.country;
-            
           })
           .catch((error) => console.log(error));
 
         this.citySearch = "";
       }
     },
-        
   },
-  
 };
 </script>
 
 <style lang="scss">
+ul {
+  list-style: none;
+}
+
 *,
-p {
+p,
+div * {
   margin: 0;
   padding: 0;
 }
@@ -141,7 +139,7 @@ body {
 }
 
 .card-home {
-  background-color: white;
+  background-color: #eef2f7;
   width: 300px;
   border-radius: 10px;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -183,11 +181,6 @@ body {
   left: 39%;
 }
 
-.content {
-  height: 100px;
-  background-color: #eef2f7;
-}
-
 .cta {
   background: rgb(94, 92, 138);
   padding: 25px;
@@ -208,7 +201,7 @@ body {
 }
 
 .search {
-  padding: 25px;
+  padding: 20px 25px;
 }
 
 .search-input {
@@ -220,9 +213,12 @@ body {
   border: 0.5px solid rgba(80, 78, 117, 0.308);
 }
 
+.search-result-item {
+  padding: 20px;
+}
 
-
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 2s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
