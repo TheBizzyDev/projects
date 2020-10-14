@@ -28,13 +28,16 @@
 .pa-1 {
     padding: 15px;
 }
+.pa-2 {
+    padding: 10px;
+}
 
 .btn {
     background-color: var(--button-color);
     color: var(--secondary-color);
     border: none;
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .form-container {
@@ -117,6 +120,7 @@
 
 /* Section 1 Description */
 .desc {
+    background-color: #F8F9FA;
     display: flex;
     text-align: center;
     padding: 112px 20px;
@@ -153,13 +157,16 @@
 }
 
 .article-image {
-    height: 300px;
-    width: 100%;
     background-image: url(/assets/phone.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     flex: 1;
+}
+
+#articles {
+    height: 56vh;
+    width: 100%;
 }
 
 .article-text {
@@ -315,7 +322,6 @@
     }
     .form-group .sign-up-search{
         margin-bottom: 20px;
-        width: 80%;
     }
 
 
@@ -350,7 +356,7 @@
     }
 
     #testimonial {
-        width: 350px;
+        width: 260px;
         margin: auto;
     }
 
