@@ -14,7 +14,7 @@ I want to take the time to say thank you to all who took the time to visit my re
 
 This challenge was provided by [Frontend Mentor](https://www.frontendmentor.io/). The provided solution is my attempt to re-build the defined layout in order to increase my html, css, and javascript capabilities.
 
-##### Your users should be able to:
+##### Requirements: Your users should be able to:
 
 - View the optimal layout for the component depending on their device's screen size
 - See a hover state on desktop for the Sign Up call-to-action
