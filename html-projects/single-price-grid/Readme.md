@@ -12,7 +12,7 @@ I want to take the time to say thank you to all who took the time to visit my re
 
 ##### Overview: 
 
-This challenge was provided by [Frontend Mentor](https://www.frontendmentor.io/). The provided solution is my attempt to re-build the defined layout in order to to increase my html, css, and javascript capabilities.
+This challenge was provided by [Frontend Mentor](https://www.frontendmentor.io/). The provided solution is my attempt to re-build the defined layout in order to increase my html, css, and javascript capabilities.
 
 ##### Your users should be able to:
 
