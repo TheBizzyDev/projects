@@ -29,10 +29,6 @@ a {
   grid-template-columns: 3fr 2fr;
 }
 
-.navbar {
-  background-color: red;
-}
-
 .description {
   background-color: blue;
 }
