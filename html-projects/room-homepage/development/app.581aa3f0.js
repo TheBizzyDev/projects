@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/app.js":[function(require,module,exports) {
+},{"C:\\Users\\jmowatt\\Documents\\projects\\html-projects\\room-homepage\\public\\img\\nav-image.jpg":[["nav-image.22364d63.jpg","img/nav-image.jpg"],"img/nav-image.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/app.js":[function(require,module,exports) {
 "use strict";
 
 require("./scss/app.scss");
@@ -221,7 +221,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61793" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62172" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

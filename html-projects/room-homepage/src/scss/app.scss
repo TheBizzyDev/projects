@@ -19,11 +19,11 @@ $font700: 700;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: 1rem;
 }
 
 body {
     font-family: 'Spartan', sans-serif;
+    font-size: .8rem;
 }
 
 ul {
@@ -32,6 +32,7 @@ ul {
 
 a {
     text-decoration: none;
+    color: $white;
 }
 
 // Utility Classes
@@ -42,7 +43,7 @@ a {
 
 .main {
     background-color: $white;
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -52,14 +53,87 @@ a {
     grid-template-columns: 3fr 2fr;
 }
 
+.navbar {
+    background: url(/img/nav-image.jpg) center/cover no-repeat;
+    color: white;
+}
+
+nav {
+    display: flex;
+    height: 50px;
+    padding: 60px;
+}
+
+.logo {
+    align-self: center;
+    padding-right: 50px;
+}
+
+.links {
+    display: flex;
+    align-self: center;
+    font-weight: 500;
+}
+
+.link-item {
+    padding-right: 30px;
+}
+
 .description {
-    background-color: blue;
+    position: relative;
+    margin-top: 50px;
+    padding: 70px;
+}
+
+.left {
+    position: absolute;
+    background-color: $black;
+    height: 82px;
+    width: 82px;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    border: none;
+}
+
+.right {
+    position: absolute;
+    background-color: $black;
+    height: 82px;
+    width: 82px;
+    bottom: 0;
+    left: 82px;
+    text-align: center;
+    border: none;
+}
+
+.left svg {
+    margin-top: 35%;
+}
+.right svg {
+    margin-top: 35%;
+}
+
+.desc-header {
+    padding-bottom: 30px;
+}
+
+.desc-body {
+    line-height: 1.5;
+    color: $dark-gray;
+    padding-bottom: 30px;
+}
+
+.shop-now {
+    letter-spacing: 1rem;
+    color: $very-dark;
+    padding-right: 20px;
 }
 
 .content {
     display: grid;
     min-height: 35vh;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 2fr 3fr 2fr;
 }
 
 .img-container1 {
@@ -73,5 +147,13 @@ a {
 .img-container2 {
     background: orange;
 }
+
+
+
+
+
+
+
+
 
 
