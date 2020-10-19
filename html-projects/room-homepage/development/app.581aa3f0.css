@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  background-color: #fff;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.header {
+  display: grid;
+  min-height: 65vh;
+  grid-template-columns: 3fr 2fr;
+}
+
+.description {
+  background-color: blue;
+}
+
+.content {
+  display: grid;
+  min-height: 35vh;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.img-container1 {
+  background-color: orange;
+}
+
+.about {
+  background-color: orangered;
+}
+
+.img-container2 {
+  background: orange;
+}
+
+/*# sourceMappingURL=/app.581aa3f0.css.map */

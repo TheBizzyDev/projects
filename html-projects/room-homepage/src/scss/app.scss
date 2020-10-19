@@ -1,16 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@300&display=swap');
+// Site Colors
 
-$primary-color: slateblue;
+$dark-gray: hsl(0, 0%, 63%);
+$black: hsl(0, 0%, 0%);
+$white: #fff;
+$very-dark: hsl(0, 0%, 27%);
+
+// font weights
+
+$font500: 500;
+$font600: 600;
+$font700: 700;
+
+// 
+
+// Global styles
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-size: 1rem;
 }
 
 body {
-    background-color: $primary-color;
-    color: #fff;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Spartan', sans-serif;
 }
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+// Utility Classes
+.container {
+    
+}
+
+
+
+// Main content
+
+.main {
+    background-color: $white;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.header {
+    display: grid;
+    min-height: 65vh;
+    grid-template-columns: 3fr 2fr;
+}
+
+.nav {
+    background: url(/src/assets/nav-image.jpg);
+}
+
+.description {
+    background-color: blue;
+}
+
+.content {
+    display: grid;
+    min-height: 35vh;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.img-container1 {
+    background-color: orange;
+}
+
+.about {
+    background-color: orangered;
+}
+
+.img-container2 {
+    background: orange;
+}
+
 
