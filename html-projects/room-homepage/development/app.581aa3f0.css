@@ -6,7 +6,6 @@
 
 body {
   font-family: "Spartan", sans-serif;
-  font-size: 0.8rem;
 }
 
 ul {
@@ -18,21 +17,69 @@ a {
   color: #fff;
 }
 
+p {
+  font-size: 0.8rem;
+}
+
 .main {
   background-color: #fff;
   height: 100vh;
-  width: 100%;
+  max-width: 1440px;
+  margin: auto;
 }
 
 .header {
   display: grid;
   min-height: 65vh;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: minmax(600px, 4fr) minmax(400px, 3fr);
 }
 
 .navbar {
   background: url(/nav-image.22364d63.jpg) center/cover no-repeat;
   color: white;
+  position: relative;
+}
+
+.left {
+  position: absolute;
+  background-color: black;
+  height: 90px;
+  width: 92px;
+  bottom: 0;
+  right: -92px;
+  text-align: center;
+  border: none;
+}
+
+.left:hover {
+  background-color: #454545;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.right {
+  position: absolute;
+  background-color: black;
+  height: 90px;
+  width: 92px;
+  bottom: 0;
+  right: -184px;
+  text-align: center;
+  border: none;
+}
+
+.right:hover {
+  background-color: #454545;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.left svg {
+  margin-top: 35%;
+}
+
+.right svg {
+  margin-top: 35%;
 }
 
 nav {
@@ -49,6 +96,7 @@ nav {
 .links {
   display: flex;
   align-self: center;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
@@ -56,40 +104,13 @@ nav {
   padding-right: 30px;
 }
 
+.link-item a:hover {
+  border-bottom: 1px solid white;
+}
+
 .description {
-  position: relative;
-  margin-top: 50px;
-  padding: 70px;
-}
-
-.left {
-  position: absolute;
-  background-color: black;
-  height: 82px;
-  width: 82px;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  border: none;
-}
-
-.right {
-  position: absolute;
-  background-color: black;
-  height: 82px;
-  width: 82px;
-  bottom: 0;
-  left: 82px;
-  text-align: center;
-  border: none;
-}
-
-.left svg {
-  margin-top: 35%;
-}
-
-.right svg {
-  margin-top: 35%;
+  margin-top: 30px;
+  padding: 70px 90px;
 }
 
 .desc-header {
@@ -102,28 +123,139 @@ nav {
   padding-bottom: 30px;
 }
 
+.arrow {
+  fill: #454545;
+}
+
 .shop-now {
-  letter-spacing: 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.7rem;
   color: #454545;
   padding-right: 20px;
+}
+
+.shop-now:hover {
+  color: #a1a1a1;
+  fill: #a1a1a1;
 }
 
 .content {
   display: grid;
   min-height: 35vh;
-  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-columns: 3fr 4fr 3fr;
 }
 
 .img-container1 {
-  background-color: orange;
+  background: url(/image-about-dark.2cf170ae.jpg) center/cover no-repeat;
 }
 
 .about {
-  background-color: orangered;
+  padding: 70px 30px;
+}
+
+.about-header {
+  font-weight: 700;
+  padding-bottom: 10px;
+  letter-spacing: 6px;
+}
+
+.about-desc {
+  color: #a1a1a1;
+  line-height: 1.5rem;
 }
 
 .img-container2 {
-  background: orange;
+  background: url(/image-about-light.6d9980e1.jpg) center/cover no-repeat;
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar {
+    height: 245px;
+  }
+
+  .description {
+    padding: 70px 30px;
+  }
+
+  .desc-header {
+    font-size: 26px;
+  }
+
+  .desc-body {
+    font-size: 0.9rem;
+  }
+
+  .shop-now {
+    font-size: 0.8rem;
+  }
+
+  .about-desc {
+    font-size: 0.8rem;
+  }
+
+  .about {
+    padding: 70px 30px;
+  }
+
+  .left {
+    position: absolute;
+    background-color: black;
+    height: 82px;
+    width: 82px;
+    bottom: 0;
+    right: 82px;
+    text-align: center;
+    border: none;
+  }
+
+  .right {
+    position: absolute;
+    background-color: black;
+    height: 82px;
+    width: 82px;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    border: none;
+  }
+
+  .description {
+    position: static;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content .img-container2 {
+    position: relative;
+  }
+
+  .img-container1 {
+    height: 250px;
+  }
+
+  .img-container2 {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .right {
+    height: 60px;
+    width: 60px;
+  }
+
+  .left {
+    height: 60px;
+    width: 60px;
+    right: 60px;
+  }
 }
 
 /*# sourceMappingURL=/app.581aa3f0.css.map */

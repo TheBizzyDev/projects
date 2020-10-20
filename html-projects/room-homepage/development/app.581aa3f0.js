@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"C:\\Users\\jmowatt\\Documents\\projects\\html-projects\\room-homepage\\public\\img\\nav-image.jpg":[["nav-image.22364d63.jpg","img/nav-image.jpg"],"img/nav-image.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/app.js":[function(require,module,exports) {
+},{"C:\\Users\\jmowatt\\Documents\\projects\\html-projects\\room-homepage\\public\\img\\nav-image.jpg":[["nav-image.22364d63.jpg","img/nav-image.jpg"],"img/nav-image.jpg"],"C:\\Users\\jmowatt\\Documents\\projects\\html-projects\\room-homepage\\public\\img\\image-about-dark.jpg":[["image-about-dark.2cf170ae.jpg","img/image-about-dark.jpg"],"img/image-about-dark.jpg"],"C:\\Users\\jmowatt\\Documents\\projects\\html-projects\\room-homepage\\public\\img\\image-about-light.jpg":[["image-about-light.6d9980e1.jpg","img/image-about-light.jpg"],"img/image-about-light.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/app.js":[function(require,module,exports) {
 "use strict";
 
 require("./scss/app.scss");
@@ -221,7 +221,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62172" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63661" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
