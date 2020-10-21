@@ -23,14 +23,14 @@ p {
 
 .main {
   background-color: #fff;
-  height: 100vh;
-  max-width: 1440px;
+  max-width: 1920px;
   margin: auto;
+  height: 100vh;
 }
 
 .header {
   display: grid;
-  min-height: 65vh;
+  min-height: 60vh;
   grid-template-columns: minmax(600px, 4fr) minmax(400px, 3fr);
 }
 
@@ -75,52 +75,67 @@ p {
 }
 
 .left svg {
-  margin-top: 35%;
+  margin: 35%;
 }
 
 .right svg {
-  margin-top: 35%;
+  margin: 35%;
 }
 
 nav {
   display: flex;
+  align-items: center;
   height: 50px;
-  padding: 60px;
+  width: 85%;
+  margin: auto;
+  padding-top: 50px;
 }
 
-.logo {
-  align-self: center;
+.logo-header {
+  font-size: 1.5rem;
   padding-right: 50px;
+}
+
+#hamburger,
+.menu-toggler i {
+  display: none;
 }
 
 .links {
   display: flex;
-  align-self: center;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.link-item {
-  padding-right: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .link-item a:hover {
   border-bottom: 1px solid white;
 }
 
+.link-item1,
+.link-item2,
+.link-item3 {
+  padding-right: 30px;
+}
+
 .description {
-  margin-top: 30px;
-  padding: 70px 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 72%;
+  margin: auto;
 }
 
 .desc-header {
+  font-size: 2.5rem;
   padding-bottom: 30px;
 }
 
 .desc-body {
-  line-height: 1.5;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.3rem;
   color: #a1a1a1;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .arrow {
@@ -128,7 +143,8 @@ nav {
 }
 
 .shop-now {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
   letter-spacing: 0.7rem;
   color: #454545;
   padding-right: 20px;
@@ -141,7 +157,7 @@ nav {
 
 .content {
   display: grid;
-  min-height: 35vh;
+  min-height: 40vh;
   grid-template-columns: 3fr 4fr 3fr;
 }
 
@@ -150,18 +166,24 @@ nav {
 }
 
 .about {
-  padding: 70px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 84%;
+  margin: auto;
 }
 
 .about-header {
   font-weight: 700;
   padding-bottom: 10px;
-  letter-spacing: 6px;
+  letter-spacing: 4px;
 }
 
-.about-desc {
+.about-desc p {
+  font-size: 0.7rem;
+  font-weight: 500;
   color: #a1a1a1;
-  line-height: 1.5rem;
+  line-height: 1.3rem;
 }
 
 .img-container2 {
@@ -175,11 +197,20 @@ nav {
   }
 
   .navbar {
-    height: 245px;
+    height: 300px;
+  }
+
+  .navbar nav {
+    padding: 0;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.521);
+    height: 80px;
+    width: 100%;
+    padding: 0 20px;
   }
 
   .description {
-    padding: 70px 30px;
+    width: 80%;
   }
 
   .desc-header {
@@ -196,10 +227,6 @@ nav {
 
   .about-desc {
     font-size: 0.8rem;
-  }
-
-  .about {
-    padding: 70px 30px;
   }
 
   .left {
@@ -244,8 +271,19 @@ nav {
   .img-container2 {
     height: 250px;
   }
+
+  .about {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    width: 80%;
+  }
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
+  .description {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   .right {
     height: 60px;
     width: 60px;
@@ -255,6 +293,41 @@ nav {
     height: 60px;
     width: 60px;
     right: 60px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .navbar nav {
+    background: transparent;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    height: 100%;
+    width: 50%;
+  }
+
+  .menu-toggler i {
+    display: inline-block;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .logo-header {
+    padding: 0;
+  }
+
+  .logo-isHamburger {
+    display: inline;
+    padding-right: 10px;
+  }
+
+  .desc-body {
+    font-size: 0.7rem;
   }
 }
 
