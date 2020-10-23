@@ -1,5 +1,53 @@
+/*------------------------------------*\
+  #colors
+\*------------------------------------*/
 
-// Global styles
+/* Background Colors */
+$backgroundColors-primary:hsl(273, 75%, 66%);
+$backgroundColors-secondary:hsl(240, 73%, 65%);
+
+
+/* Text hover colors */
+$textHover: hsl(14, 88%, 65%);
+
+
+/* Question text colors */
+$questionActive: hsl(238, 29%, 16%);
+$questionInactive: hsl(237, 12%, 33%);
+$answerActive: hsl(240, 6%, 50%);
+
+
+/* Divider Colors */
+$dividerHorizontal: hsl(240, 5%, 91%);
+
+
+/*------------------------------------*\
+  #font
+\*------------------------------------*/
+
+/*font family kumbh */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+
+/* Font weights */
+$font400: 400;
+$font700: 700;
+
+
+/* Font Family */
+$family: 'Kumbh Sans', sans-serif;
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+  #Global-Styles
+\*------------------------------------*/
 
 * {
     box-sizing: border-box;
@@ -8,20 +56,14 @@
 }
 
 body {
-   
+   margin: 0;
+   padding: 0;
 }
 
-ul {
-    list-style: none;
-}
+ul { list-style: none; }
 
-a {
-    text-decoration: none;
-}
+a { text-decoration: none; }
 
-p {
-    font-size: 1rem;
-}
+p { font-size: 1rem; }
 
-// Utility Classes
 
