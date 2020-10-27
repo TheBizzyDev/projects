@@ -50,10 +50,163 @@ body {
    margin: 0;
    padding: 0;
    font-size: 16px;
+   font-family: $family;
 }
 
 ul { list-style: none; }
 
 a { text-decoration: none; }
+
+
+
+
+
+/*------------------------------------*\
+  #utility-classes
+\*------------------------------------*/
+.fq-container {
+  min-height: 100vh;
+  padding: 0 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient($backgroundColors-primary,$backgroundColors-secondary);
+}
+
+
+
+
+/*------------------------------------*\
+  #global card styles
+\*------------------------------------*/
+
+.fq-card {
+  width: 850px;
+  display: grid;
+  padding: 70px 80px;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
+  overflow: hidden;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #header placement and div width sizing for 
+  card
+\*------------------------------------*/
+
+.fq-card {
+  position: relative;
+}
+
+.fq-card__image img{
+  // display: none;
+  position: absolute;
+  top: -225px;
+  left: -450px;
+  width: 800px;
+}
+
+.fq-card__header {
+  padding-bottom: 30px;
+}
+
+.fq-card__faqs {
+  width: 100%;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #faq detail styles
+\*------------------------------------*/
+
+.fq-card__question {
+  border-bottom: 1px solid $dividerHorizontal;
+}
+
+.fq-card-group {
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  align-items: baseline;
+  // border-bottom: 1px solid $dividerHorizontal;
+}
+
+.fq-card-group p:first-child {
+  color: $questionInactive;
+  padding: 15px 0;
+}
+
+.fq-card-group,
+.fq-card-group p:hover {
+  cursor: pointer;
+  color: $textHover;
+}
+
+.fq-card-group img {
+  justify-self: center;
+}
+
+.fq-card__answer {
+  font-size: .9rem;
+  color: $answerActive;
+  padding-bottom: 10px;
+
+}
+
+.fq-card__answer--hide {
+  display: none;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #Media Queries
+\*------------------------------------*/
+@media only screen and (max-width: 750px) {
+  
+  // Faq heading text center
+  .fq-card__header {
+    text-align: center;
+  }
+  
+  // Change grid columns to 100% width
+  .fq-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
+    padding: 70px 30px;
+  }
+  // Remove image
+  .fq-card__image img {
+    display: none;
+  }
+
+  .fq-card-group img {
+    justify-self: end;
+  }
+}
+
+
+
+
+
+
 
 
