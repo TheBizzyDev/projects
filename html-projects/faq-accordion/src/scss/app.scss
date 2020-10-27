@@ -112,10 +112,19 @@ a { text-decoration: none; }
   position: relative;
 }
 
-.fq-card__image img{
+.fq-card__image img:nth-child(1){
   // display: none;
   position: absolute;
-  top: -225px;
+  top: 45px;
+  left: -70px;
+  width: 420px;
+  z-index: 2;
+}
+
+.fq-card__image img:nth-child(2){
+  // display: none;
+  position: absolute;
+  top: -240px;
   left: -450px;
   width: 800px;
 }
