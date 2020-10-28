@@ -191,7 +191,32 @@ module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/scripts/functions.js":[function(require,module,exports) {
 var answerToggle = function answerToggle() {
-  var question = document.querySelector('');
+  document.addEventListener('click', function (e) {
+    var targetElement = e.target.id === 'question';
+
+    if (targetElement) {
+      // variable for the selected Element
+      var selectedElement = e.target.parentElement.children[2].classList.toggle('fq-card__answer--hide');
+      var selectedElementHeader = e.target.classList.toggle('fq-card__header--bold');
+      var toggleArrows = e.target.nextElementSibling.classList;
+
+      if (!toggleArrows.contains("fq-card__rotate--arrow-up") && !toggleArrows.contains("fq-card__rotate--arrow-down")) {
+        toggleArrows.add('fq-card__rotate--arrow-up');
+        selectedElement;
+        selectedElementHeader;
+      } else if (toggleArrows.contains("fq-card__rotate--arrow-up") && !toggleArrows.contains("fq-card__rotate--arrow-down")) {
+        toggleArrows.remove('fq-card__rotate--arrow-up');
+        toggleArrows.add('fq-card__rotate--arrow-down');
+        selectedElement;
+        selectedElementHeader;
+      } else if (toggleArrows.contains("fq-card__rotate--arrow-down")) {
+        toggleArrows.add('fq-card__rotate--arrow-up');
+        toggleArrows.remove('fq-card__rotate--arrow-down');
+        selectedElement;
+        selectedElementHeader;
+      }
+    }
+  });
 };
 
 answerToggle();
@@ -229,7 +254,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56667" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58204" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

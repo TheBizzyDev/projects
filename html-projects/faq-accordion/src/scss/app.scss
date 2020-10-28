@@ -66,13 +66,36 @@ a { text-decoration: none; }
 \*------------------------------------*/
 .fq-container {
   min-height: 100vh;
-  padding: 0 30px;
+  padding: 30px 30px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: linear-gradient($backgroundColors-primary,$backgroundColors-secondary);
 }
+
+
+.fq-card__answer--hide {
+  transition: all 2s;
+  display: none;
+}
+
+.fq-card__header--bold {
+  color: $questionActive;
+  font-weight: $font700;
+}
+
+.fq-card__rotate--arrow-up {
+  transition: all .5s;
+  transform: rotate(180deg);
+
+}
+
+.fq-card__rotate-arrow-down {
+  transform: rotate(-180deg);
+  transition: all 1s;
+}
+
 
 
 
@@ -84,7 +107,7 @@ a { text-decoration: none; }
 .fq-card {
   width: 850px;
   display: grid;
-  padding: 70px 80px;
+  padding: 70px;
   grid-template-columns: 1fr 1fr;
   border-radius: 20px;
   background-color: white;
@@ -96,7 +119,6 @@ a { text-decoration: none; }
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
   0 100px 80px rgba(0, 0, 0, 0.12)
   ;
-  overflow: hidden;
 }
 
 
@@ -110,23 +132,7 @@ a { text-decoration: none; }
 
 .fq-card {
   position: relative;
-}
-
-.fq-card__image img:nth-child(1){
-  // display: none;
-  position: absolute;
-  top: 45px;
-  left: -70px;
-  width: 420px;
-  z-index: 2;
-}
-
-.fq-card__image img:nth-child(2){
-  // display: none;
-  position: absolute;
-  top: -240px;
-  left: -450px;
-  width: 800px;
+  overflow: hidden;
 }
 
 .fq-card__header {
@@ -145,24 +151,68 @@ a { text-decoration: none; }
   #faq detail styles
 \*------------------------------------*/
 
+// Background floating image
+.fq-card__image img:nth-child(1){
+  display: block;
+  position: absolute;
+  top: 45px;
+  left: -70px;
+  width: 420px;
+  margin-top: auto;
+  margin-bottom: auto;
+  z-index: 2;
+  animation: float 4s ease-in-out infinite;
+}
+
+// image box on the container
+.fq-card__image img:nth-child(2) {
+  position: absolute;
+  top: 155px;
+  left: -125px;
+  z-index: 1000;
+  animation: float 4s ease-in-out infinite;
+}
+
+// background static image
+.fq-card__image img:nth-child(3){
+  // display: none;
+  position: absolute;
+  top: -240px;
+  left: -450px;
+  width: 800px;
+}
+
+// Animage float images
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-10px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
 .fq-card__question {
   border-bottom: 1px solid $dividerHorizontal;
 }
 
 .fq-card-group {
   display: grid;
-  grid-template-columns: 7fr 1fr;
+  grid-template-columns: 9fr .05fr;
   align-items: baseline;
-  // border-bottom: 1px solid $dividerHorizontal;
 }
 
 .fq-card-group p:first-child {
   color: $questionInactive;
+  font-size: .9rem;
   padding: 15px 0;
 }
 
 .fq-card-group,
-.fq-card-group p:hover {
+.fq-card-group p:first-child:hover {
   cursor: pointer;
   color: $textHover;
 }
@@ -175,12 +225,8 @@ a { text-decoration: none; }
   font-size: .9rem;
   color: $answerActive;
   padding-bottom: 10px;
-
 }
 
-.fq-card__answer--hide {
-  display: none;
-}
 
 
 
@@ -201,14 +247,67 @@ a { text-decoration: none; }
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 4fr;
     padding: 70px 30px;
+    overflow: visible;
   }
   // Remove image
-  .fq-card__image img {
+  .fq-card__image img:nth-child(3) {
     display: none;
+  }
+  
+  // Adjust image size
+  .fq-card__image img:nth-child(1) {
+    position: absolute;
+    width: 300px;
+    top: -100px;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .fq-card__image img:nth-child(2) {
+    position: absolute;
+    width: 120px;
+    top: -12px;
+    right: -55px;
+    left: -250px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: float 4s ease-in-out infinite;
   }
 
   .fq-card-group img {
     justify-self: end;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+
+  // adjusting images sizes
+  .fq-card {
+    grid-template-rows: 1fr;
+  }
+  .fq-card__image img:nth-child(1) {
+    position: absolute;
+    width: 200px;
+    top: -100px;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .fq-card__image img:nth-child(2) {
+    position: absolute;
+    width: 70px;
+    top: -38px;
+    right: -135px;
+    left: -260px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: float 4s ease-in-out infinite;
   }
 }
 
