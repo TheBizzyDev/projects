@@ -25,7 +25,7 @@ The designs are in JPG static format. This will mean that you'll need to use you
 
 ##### Solution is Deployed on Vercel at the below site:
 
-[Live Preview of Solution](https://price-grid-tau.vercel.app/)
+[Live Preview of Solution](https://single-price-grid-chi.vercel.app/)
 
 
 
