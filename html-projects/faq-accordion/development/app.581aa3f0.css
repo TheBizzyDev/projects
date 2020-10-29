@@ -146,8 +146,8 @@ a {
 
 .fq-card-group {
   display: grid;
-  grid-template-columns: 9fr 0.05fr;
-  align-items: baseline;
+  grid-template-columns: 9fr 1fr;
+  align-items: center;
 }
 
 .fq-card-group p:first-child {
