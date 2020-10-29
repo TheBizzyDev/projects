@@ -7,6 +7,7 @@ const answerToggle = () => {
         if(targetElement) {
 
             // variable for the selected Element
+            // Update this code to fix issue with event listener
             let selectedElement = e.target.parentElement.children[2].classList.toggle('fq-card__answer--hide');
 
             let selectedElementHeader = e.target.classList.toggle('fq-card__header--bold');

@@ -196,6 +196,7 @@ var answerToggle = function answerToggle() {
 
     if (targetElement) {
       // variable for the selected Element
+      // Update this code to fix issue with event listener
       var selectedElement = e.target.parentElement.children[2].classList.toggle('fq-card__answer--hide');
       var selectedElementHeader = e.target.classList.toggle('fq-card__header--bold');
       var toggleArrows = e.target.nextElementSibling.classList;
@@ -254,7 +255,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44327" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46507" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
