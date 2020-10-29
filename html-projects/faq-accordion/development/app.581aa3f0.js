@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -149,7 +149,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -184,12 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../src/scss/app.scss":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../src/scss/app.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/scripts/functions.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/scripts/functions.js":[function(require,module,exports) {
 var answerToggle = function answerToggle() {
   document.addEventListener('click', function (e) {
     var targetElement = e.target.id === 'question';
@@ -197,24 +197,24 @@ var answerToggle = function answerToggle() {
     if (targetElement) {
       // variable for the selected Element
       // Update this code to fix issue with event listener
-      var selectedElement = e.target.parentElement.children[2].classList.toggle('fq-card__answer--hide');
-      var selectedElementHeader = e.target.classList.toggle('fq-card__header--bold');
+      var selectedElement = e.target.parentElement.parentElement.children[1].classList;
+      var selectedElementHeader = e.target.classList;
       var toggleArrows = e.target.nextElementSibling.classList;
 
       if (!toggleArrows.contains("fq-card__rotate--arrow-up") && !toggleArrows.contains("fq-card__rotate--arrow-down")) {
         toggleArrows.add('fq-card__rotate--arrow-up');
-        selectedElement;
-        selectedElementHeader;
+        selectedElement.toggle('fq-card__answer--hide');
+        selectedElementHeader.toggle('fq-card__header--bold');
       } else if (toggleArrows.contains("fq-card__rotate--arrow-up") && !toggleArrows.contains("fq-card__rotate--arrow-down")) {
         toggleArrows.remove('fq-card__rotate--arrow-up');
         toggleArrows.add('fq-card__rotate--arrow-down');
-        selectedElement;
-        selectedElementHeader;
+        selectedElement.toggle('fq-card__answer--hide');
+        selectedElementHeader.toggle('fq-card__header--bold');
       } else if (toggleArrows.contains("fq-card__rotate--arrow-down")) {
         toggleArrows.add('fq-card__rotate--arrow-up');
         toggleArrows.remove('fq-card__rotate--arrow-down');
-        selectedElement;
-        selectedElementHeader;
+        selectedElement.toggle('fq-card__answer--hide');
+        selectedElementHeader.toggle('fq-card__header--bold');
       }
     }
   });
@@ -227,7 +227,7 @@ answerToggle();
 require("./scss/app.scss");
 
 require("./scripts/functions.js");
-},{"./scss/app.scss":"../src/scss/app.scss","./scripts/functions.js":"../src/scripts/functions.js"}],"../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./scss/app.scss":"../src/scss/app.scss","./scripts/functions.js":"../src/scripts/functions.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -255,7 +255,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46507" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56553" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -431,5 +431,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../src/app.js"], null)
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../src/app.js"], null)
 //# sourceMappingURL=/app.581aa3f0.js.map
