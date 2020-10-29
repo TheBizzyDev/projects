@@ -2,7 +2,7 @@ const answerToggle = () => {
 
     document.addEventListener('click', (e) => {
 
-        let targetElement = e.target.id === 'question';
+        let targetElement = e.target.classList.contains('question');
 
         if(targetElement) {
 

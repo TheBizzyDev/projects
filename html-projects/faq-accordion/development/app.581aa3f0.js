@@ -192,7 +192,7 @@ module.hot.accept(reloadCSS);
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/scripts/functions.js":[function(require,module,exports) {
 var answerToggle = function answerToggle() {
   document.addEventListener('click', function (e) {
-    var targetElement = e.target.id === 'question';
+    var targetElement = e.target.classList.contains('question');
 
     if (targetElement) {
       // variable for the selected Element
@@ -255,7 +255,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56553" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60554" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
