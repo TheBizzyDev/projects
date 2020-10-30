@@ -39,12 +39,7 @@ const answerToggle = () => {
 
     })
 
-    
-    
-
-
-
-
+  
 }
 
 answerToggle();
