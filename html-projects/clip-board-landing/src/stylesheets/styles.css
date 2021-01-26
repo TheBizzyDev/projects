@@ -1,0 +1,54 @@
+:root {
+  
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+img {
+    width: 100%;
+    border: none;
+}
+
+
+/* UTILITIES */
+
+.primary-container {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.secondary-container {
+  max-width: 640px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.flow-content >  * + * {
+  margin-top: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.col {
+  flex-direction: column;
+}
+
+
+
+
+/* UTILITIES */
