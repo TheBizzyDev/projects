@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -149,7 +149,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -184,50 +184,16 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../src/scss/app.scss":[function(require,module,exports) {
+},{"./bundle-url":"../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../src/scss/app.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/scripts/functions.js":[function(require,module,exports) {
-var answerToggle = function answerToggle() {
-  document.addEventListener('click', function (e) {
-    var targetElement = e.target.classList.contains('question');
-
-    if (targetElement) {
-      // variable for the selected Element
-      // Update this code to fix issue with event listener
-      var selectedElement = e.target.parentElement.parentElement.children[1].classList;
-      var selectedElementHeader = e.target.classList;
-      var toggleArrows = e.target.nextElementSibling.classList;
-
-      if (!toggleArrows.contains("fq-card__rotate--arrow-up") && !toggleArrows.contains("fq-card__rotate--arrow-down")) {
-        toggleArrows.add('fq-card__rotate--arrow-up');
-        selectedElement.toggle('fq-card__answer--hide');
-        selectedElementHeader.toggle('fq-card__header--bold');
-      } else if (toggleArrows.contains("fq-card__rotate--arrow-up") && !toggleArrows.contains("fq-card__rotate--arrow-down")) {
-        toggleArrows.remove('fq-card__rotate--arrow-up');
-        toggleArrows.add('fq-card__rotate--arrow-down');
-        selectedElement.toggle('fq-card__answer--hide');
-        selectedElementHeader.toggle('fq-card__header--bold');
-      } else if (toggleArrows.contains("fq-card__rotate--arrow-down")) {
-        toggleArrows.add('fq-card__rotate--arrow-up');
-        toggleArrows.remove('fq-card__rotate--arrow-down');
-        selectedElement.toggle('fq-card__answer--hide');
-        selectedElementHeader.toggle('fq-card__header--bold');
-      }
-    }
-  });
-};
-
-answerToggle();
-},{}],"../src/app.js":[function(require,module,exports) {
+},{"_css_loader":"../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/app.js":[function(require,module,exports) {
 "use strict";
 
 require("./scss/app.scss");
-
-require("./scripts/functions.js");
-},{"./scss/app.scss":"../src/scss/app.scss","./scripts/functions.js":"../src/scripts/functions.js"}],"../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./scss/app.scss":"../src/scss/app.scss"}],"../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -255,15 +221,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61116" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46541" + '/');
->>>>>>> 5d1397a145b967f2fe045270d2314463a64beccc
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43545" + '/');
->>>>>>> b1b9be821193c39d9109c3682a7a7f3b75f2aa6c
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35057" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -439,5 +397,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../src/app.js"], null)
+},{}]},{},["../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../src/app.js"], null)
 //# sourceMappingURL=/app.581aa3f0.js.map
