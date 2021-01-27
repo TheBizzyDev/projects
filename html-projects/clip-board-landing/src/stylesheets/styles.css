@@ -1,5 +1,41 @@
 :root {
+
+  /* FONT COLORS */
+
+  --ffamily: 'Bai Jamjuree', sans-serif;
+
+  --primary-cyan: hsl(171, 66%, 44%);
+  --primary-cyanlight: hsl(171, 66%, 48%) ;
+  --primary-cyanbbottom: hsl(171, 63%, 38%);
+
+  --secondary-blue: hsl(233, 100%, 69%);
+  --secondary-bluelight: hsl(233, 81%, 71%);
+  --secondary-bluebbottom: hsl(233, 60%, 57%);
+
+  --ntrl-dark-gray: hsl(210, 10%, 33%);
+  --ntrl-grayish: hsl(201, 11%, 66%);
+
+  /* FONT COLORS */
+
+  /* PADDING AND SPACING */
+
+  --padding-y: 5rem;
+  --width: 90%;
+  --max-primary-width: 90rem;
+  --max-secondary-width: 35rem; 
+
+
   
+  /* PADDING AND SPACING */
+  
+  
+
+
+  
+
+
+
+
 }
 
 *,
@@ -10,45 +46,253 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
+h1 {
+  font-size: 1.8rem;
 }
 
+
+a {
+    text-decoration: none;
+    width: 100%;
+}
+
+p {
+  color: var(--ntrl-grayish);
+  margin: 0;
+  padding: 0;
+}
 
 img {
     width: 100%;
-    border: none;
+    height: auto;
 }
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
 
 
 /* UTILITIES */
 
+.text-center {
+  text-align: center;
+}
+
 .primary-container {
-  max-width: 800px;
-  width: 90%;
+  max-width: var(--max-primary-width);
+  width: var(--width);
   margin: 0 auto;
 }
 
 .secondary-container {
-  max-width: 640px;
-  width: 90%;
+  max-width: var(--max-secondary-width);
+  width: 85%;
   margin: 0 auto;
 }
 
-.flow-content >  * + * {
+.btn-primary {
+  color: white;
+  background-color: var(--primary-cyan);
+  border-bottom: 3px solid var(--primary-cyan);
+}
+.btn-primary:hover {
+  background-color: var(--primary-cyanlight);
+  border-color: var(--primary-cyanbbottom);
+}
+
+.btn-secondary {
+  color: white;
+  background-color: var(--secondary-blue);
+  border-bottom: 3px solid var(--secondary-blue);
+}
+.btn-secondary:hover {
+  background-color: var(--secondary-bluelight);
+  border-color: var(--secondary-bluebbottom);
+  
+}
+
+
+
+.flow-content >  * + *  {
   margin-top: 1rem;
+}
+
+.flow-content--large > * + * {
+  margin-top: 2rem;
+}
+
+.flow-content--xlarge > * + * {
+  margin-top: 4rem;
+}
+
+.flow-spacer > * + * {
+  margin-left: 1rem;
+}
+
+.flow-content-y > * {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .row {
   display: flex;
-  flex-direction: column;
 }
 
 .col {
   flex-direction: column;
 }
 
-
-
-
 /* UTILITIES */
+
+/* GENERAL STYLE */
+
+h1,
+h2,
+h3 {
+  color: var(--ntrl-dark-gray);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+body {
+  font-family: var(--ffamily);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  padding: 1em 2.5em;
+  cursor: pointer;
+}
+
+
+/* GENERAL STYLE */
+
+.hero {
+  background: url(/src/assets/bg-header-mobile.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* HERO STYLES */
+
+.hero__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* HERO STYLES */
+
+/* SNIPPETS STYLES */
+.snippet__content {
+  
+}
+
+.snippet__img {
+  flex: 1.4;
+}
+
+.snippet__img img{
+  transform: translateX(-112px);
+}
+
+.snippet__content > * {
+  gap: 3rem;
+}
+
+.snippet__details {
+  flex: 1;
+  justify-content: space-around;
+  padding: 6rem 0;
+}
+
+.snippet__header {
+  font-weight: 700;
+}
+
+.snippet__subhead {
+  max-width: 21rem;
+}
+
+/* SNIPPETS STYLES */
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media (min-width: 38rem) {
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero {
+    background-image: url(/src/assets/bg-header-desktop.png);
+  }
+
+  .hero__cta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }  
+  
+
+}
+
+@media screen and (max-width: 600px) {
+  
+  .snippet__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .snippet__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .snippet__img img{
+    max-width: 50rem;
+    transform: translateX(0px);
+  }
+
+  
+  .snippet__details > * {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+
+}
