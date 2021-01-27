@@ -294,11 +294,14 @@ body {
   }
 }
 
-
-
-
 /* BUSINESS STYLES */
 
+.clipboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 
 
