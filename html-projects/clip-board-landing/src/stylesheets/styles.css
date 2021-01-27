@@ -22,7 +22,7 @@
   --padding-y: 5rem;
   --width: 90%;
   --max-primary-width: 90rem;
-  --max-secondary-width: 35rem; 
+  --max-secondary-width: 40rem; 
 
 
   
@@ -88,7 +88,7 @@ ol[class] {
 
 .secondary-container {
   max-width: var(--max-secondary-width);
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -100,6 +100,7 @@ ol[class] {
 .btn-primary:hover {
   background-color: var(--primary-cyanlight);
   border-color: var(--primary-cyanbbottom);
+  transition: all .2s ease-in;
 }
 
 .btn-secondary {
@@ -110,7 +111,7 @@ ol[class] {
 .btn-secondary:hover {
   background-color: var(--secondary-bluelight);
   border-color: var(--secondary-bluebbottom);
-  
+  transition: all .2s ease-in;  
 }
 
 
@@ -132,8 +133,8 @@ ol[class] {
 }
 
 .flow-content-y > * {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .row {
@@ -169,7 +170,7 @@ p {
 body {
   font-family: var(--ffamily);
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 2;
 }
 
 .btn {
@@ -177,7 +178,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  padding: 1em 2.5em;
+  padding: .6em 2.5em;
   cursor: pointer;
 }
 
@@ -195,7 +196,7 @@ body {
 
 /* HERO STYLES */
 
-.hero__cta {
+.cta {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -204,26 +205,21 @@ body {
 /* HERO STYLES */
 
 /* SNIPPETS STYLES */
-.snippet__content {
-  
-}
 
 .snippet__img {
   flex: 1.4;
+  display: flex;
+  align-items: center;
+
 }
 
 .snippet__img img{
   transform: translateX(-112px);
 }
 
-.snippet__content > * {
-  gap: 3rem;
-}
-
 .snippet__details {
   flex: 1;
-  justify-content: space-around;
-  padding: 6rem 0;
+  justify-content: space-evenly;
 }
 
 .snippet__header {
@@ -236,11 +232,72 @@ body {
 
 /* SNIPPETS STYLES */
 
+/* ACCESS STYLES */
+
+.access {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.access__img {
+  max-width: 60rem;
+}
+
+/* ACCESS STYLES */
 
 
 
 
+/* WORKFLOW STYLES */
 
+.workflow__content {
+  justify-content: center;
+  align-items: baseline;
+}
+
+.workflow__content {
+  max-width: 68.625rem;
+  margin: 0 auto;
+  text-align: center;
+  gap: 20px;
+}
+
+.workflow__content > * {
+  margin-top: 3rem;
+}
+
+.workflow__section img {
+  max-width: 2.6875rem;
+}
+
+.workflow__subhead {
+  max-width: 21rem;
+}
+
+/* WORKFLOW STYLES */
+
+/* BUSINESS STYLES */
+
+.business {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+@media screen and (max-width: 800px) {
+
+  .business {
+    gap: .5rem;
+    flex-direction: column;
+  }
+}
+
+
+
+
+/* BUSINESS STYLES */
 
 
 
@@ -250,6 +307,10 @@ body {
 /* MEDIA QUERIES */
 @media (min-width: 38rem) {
 
+  .snippet__content .flow-content--large  {
+    margin-top: 0;
+  }
+
   h1 {
     font-size: 2.2rem;
   }
@@ -258,7 +319,7 @@ body {
     background-image: url(/src/assets/bg-header-desktop.png);
   }
 
-  .hero__cta {
+  .cta {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
@@ -276,11 +337,6 @@ body {
     flex-direction: column;
   }
 
-  .snippet__img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
   .snippet__img img{
     max-width: 50rem;
@@ -293,6 +349,14 @@ body {
     margin-right: auto;
     margin-left: auto;
   }
+
+  .workflow__content {
+   
+    align-items: center;
+    flex-direction: column;
+
+  }
+
 
 
 }
