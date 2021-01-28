@@ -28,14 +28,6 @@
   
   /* PADDING AND SPACING */
   
-  
-
-
-  
-
-
-
-
 }
 
 *,
@@ -67,8 +59,8 @@ img {
     height: auto;
 }
 
-ul[class],
-ol[class] {
+ul,
+ol {
   list-style: none;
 }
 
@@ -185,6 +177,10 @@ body {
 
 /* GENERAL STYLE */
 
+
+
+/* HERO STYLES */
+
 .hero {
   background: url(/src/assets/bg-header-mobile.png) no-repeat;
   background-size: cover;
@@ -193,8 +189,6 @@ body {
   align-items: center;
 }
 
-
-/* HERO STYLES */
 
 .cta {
   display: flex;
@@ -231,6 +225,8 @@ body {
 }
 
 /* SNIPPETS STYLES */
+
+
 
 /* ACCESS STYLES */
 
@@ -296,14 +292,45 @@ body {
 
 /* BUSINESS STYLES */
 
+
+/* CLIPBOARD STYLES */
 .clipboard {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+/* CLIPBOARD STYLES */
 
 
+/*  SOCIAL STYLES  */
+
+.list {
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.list__items {
+    display: flex;
+}
+
+.list__items > * + * {
+    margin-left: 4rem;
+}
+
+.social-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+
+
+
+
+/*  SOCIAL STYLES  */
 
 
 
@@ -359,7 +386,5 @@ body {
     flex-direction: column;
 
   }
-
-
 
 }
