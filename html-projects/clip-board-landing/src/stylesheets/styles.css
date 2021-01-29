@@ -408,9 +408,6 @@ body {
     text-align: center;
   }
 
-  .list__content > * + * {
-    margin-top: 1rem;
-  }
 
   .list__items {
     margin-right: auto;
@@ -424,8 +421,6 @@ body {
   .logo {
     margin-bottom: 1rem;
   }
-
-
 
 
 
