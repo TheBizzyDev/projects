@@ -55,12 +55,12 @@ body {
 }
 
 /* UTILITY STYLES */
-.container { 
+.container {
     max-width: var(--contain-width);
     margin: 0 auto;
 }
 
-.content-width { 
+.content-width {
     max-width: var(--content-width);
     margin-left: auto;
     margin-right: auto;
@@ -91,11 +91,11 @@ body {
     color: var(--White);
 }
 
-.flow-spacer > * + * {
+.flow-spacer>*+* {
     margin-top: 1rem;
 }
 
-.flow-content > * {
+.flow-content>* {
     padding-top: 4rem;
 }
 
@@ -141,8 +141,8 @@ body {
     padding-bottom: 8rem;
 }
 
-.interactive {
-    flex: 2;
+.vr {
+    text-align: center;
 }
 
 .vr__content {
@@ -150,18 +150,18 @@ body {
     justify-content: flex-end;
     flex-direction: column;
     font-weight: var(--fw-400);
-    flex: 1;
 }
 
 .vr__header {
     text-transform: uppercase;
     font-weight: var(--fw-300);
-    font-size: 2.6rem;
+    font-size: 2rem;
 }
 
 .vr__info {
+    margin-top: 2rem;
     line-height: 1.5;
-    font-size: .83rem;
+    font-size: 1.04rem;
     font-family: var(--ff-alata);
 }
 
@@ -171,11 +171,13 @@ body {
 }
 
 .creations__header {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: var(--fw-300);
+    text-align: center;
 }
 
 .creations__link {
+    display: none;
     padding: 1em 3em;
     background-color: var(--black);
 }
@@ -188,7 +190,7 @@ body {
 
 /* MEDIA QUERIES */
 
-@media screen and (min-width: 40.625rem) {
+@media screen and (min-width: 47rem) {
 
     /* UTILITIES */
     .split > * + * {
@@ -215,23 +217,58 @@ body {
     .hamburger {
         display: none;
     }
-    
+
+    /* LEADER SECTION */
+    .leader {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        min-height: 40rem;
+    }
+
+    .interactive,
     .vr {
+        grid-row: 1/2;
+    }
+
+    .interactive {
+        grid-column: 1/7;
+        align-self: flex-end;
+    }    
+
+    .vr {
+        text-align: left;
         display: inline-block;
+        background-color: var(--White);
+        align-self: flex-end;
+        grid-column: 5/-1;
+        padding-left: 3.75em;
+        padding-top: 3.75em;
         background-color: var(--White);
     }
 
-    /* LEADER SECTION */
+    .vr__header {
+        font-size: 2.6rem;
+    }
 
-
-
-
+    
     /* CREATIONS SECTION */
+    .creations__header {
+        font-size: 3rem;
+        text-align: left;
+    }
     .creations__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+
+    .creations__link {
+        display: inline-block;
+    }
+
+    /* CREATIONS GRID */
+
+
     
 }
 
