@@ -37,7 +37,6 @@
 
 a { 
     text-decoration: none;
-    color: var(--White); 
 }
 
 ul,
@@ -70,6 +69,10 @@ body {
 
 .text-center {
     text-align: center;
+}
+
+.text-accent--white {
+    color: var(--White);
 }
 
 .text-accent--light {
@@ -134,6 +137,9 @@ body {
 }
 
 /* LEADER SECTION */
+.leader {
+    padding-bottom: 8rem;
+}
 
 .interactive {
     flex: 2;
@@ -158,6 +164,25 @@ body {
     font-size: .83rem;
     font-family: var(--ff-alata);
 }
+
+/*  CREATIONS SECTION   */
+.creations__content {
+    text-transform: uppercase;
+}
+
+.creations__header {
+    font-size: 3rem;
+    font-weight: var(--fw-300);
+}
+
+.creations__link {
+    padding: 1em 3em;
+    background-color: var(--black);
+}
+
+
+
+
 
 
 
@@ -197,6 +222,16 @@ body {
     }
 
     /* LEADER SECTION */
+
+
+
+
+    /* CREATIONS SECTION */
+    .creations__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     
 }
 
