@@ -168,7 +168,7 @@ body {
 .vr__info {
     margin-top: 2rem;
     line-height: 1.5;
-    font-size: 1.04rem;
+    font-size: 1.05rem;
     font-family: var(--ff-alata);
 }
 
@@ -183,70 +183,81 @@ body {
     text-align: center;
 }
 
-.creations__link {
+.btn {
     display: none;
-    padding: 1em 3em;
+    letter-spacing: 6px;
+    font-family: var(--ff-alata);
+    padding: .8em 2.5em;
+    border: 2px solid black;
     background-color: var(--black);
+}
+
+.btn:hover {
+    transition: .3s ease;
+   background-color: var(--White); 
+   color: var(--black);
 }
 
 /* GRID SECTION */
 
 
 .earth {
-    background: url(/images/mobile/image-deep-earth.jpg) no-repeat;
+    background-image: url(/images/mobile/image-deep-earth.jpg);
 }
 
 .arcade {
-    background: url(/images/mobile/image-night-arcade.jpg) no-repeat;
+    background-image: url(/images/mobile/image-night-arcade.jpg);
 }
 .soccer {
-    background: url(/images/mobile/image-soccer-team.jpg) no-repeat;
+    background-image: url(/images/mobile/image-soccer-team.jpg);
 }
 .the-grid {
-    background: url(/images/mobile/image-grid.jpg) no-repeat;
+    background-image: url(/images/mobile/image-grid.jpg);
 }
 .up-above {
-    background: url(/images/mobile/image-from-above.jpg) no-repeat;
+    background-image: url(/images/mobile/image-from-above.jpg);
 }
 .borealis {
-    background: url(/images/mobile/image-pocket-borealis.jpg) no-repeat;
+    background-image: url(/images/mobile/image-pocket-borealis.jpg);
 }
 .curiosity {
-    background: url(/images/mobile/image-curiosity.jpg) no-repeat;
+    background-image: url(/images/mobile/image-curiosity.jpg);
 }
 .fisheye {
-    background: url(/images/mobile/image-fisheye.jpg) no-repeat;
+    background-image: url(/images/mobile/image-fisheye.jpg);
 }
 
 
 .grid-basic {
     display: flex;
     align-items: flex-end;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 300;
-    padding: 1.5rem;
+    font-size: 1.4rem;
+    padding: 1rem;
     text-transform: uppercase;
     background-position: center;
     background-size: cover;
-    position: relative;
+    background-repeat: no-repeat;
+    
+    /* Using Blend mode instead of adding a ::before overlay for hover
+    affects */
+    background-color: rgba(0, 0, 0, 0.226);
+    background-blend-mode: multiply;
+    
 }
 
-.grid-basic span {
+.grid-basic:hover {
+    background-color: rgba(255, 255, 255, 0.644);
+    background-blend-mode: overlay;
+    color: black;
+    cursor: pointer;
+    transition: background-color 75ms linear;
+}
+
+.grid-basic {
+    color: white;
     z-index: 1;
 }
 
-.grid-basic::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: black;
-    opacity: .25;
-    z-index: 0;
-}
 
 /* MEDIA QUERIES */
 
@@ -322,7 +333,7 @@ body {
         align-items: center;
     }
 
-    .creations__link {
+    .btn {
         display: inline-block;
     }
 
@@ -330,9 +341,8 @@ body {
 
     .grid {
         display: grid;
-        grid-template-columns: repeat(4, minmax(auto, 1fr));
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, minmax(auto, 28.125rem));
-        gap: 1rem;
     }
 
     .grid-basic {
@@ -340,36 +350,38 @@ body {
     }
 
     .earth {
-        background: url(/images/desktop/image-deep-earth.jpg) no-repeat;
+        background-image: url(/images/desktop/image-deep-earth.jpg);
     }
 
     .arcade {
-        background: url(/images/desktop/image-night-arcade.jpg) no-repeat;
+        background-image: url(/images/desktop/image-night-arcade.jpg);
     }
 
     .soccer {
-        background: url(/images/desktop/image-soccer-team.jpg) no-repeat;
+        background-image: url(/images/desktop/image-soccer-team.jpg);
     }
 
     .the-grid {
-        background: url(/images/desktop/image-grid.jpg) no-repeat;
+        background-image: url(/images/desktop/image-grid.jpg);
     }
 
     .up-above {
-        background: url(/images/desktop/image-from-above.jpg) no-repeat;
+        background-image: url(/images/desktop/image-from-above.jpg);
     }
 
     .borealis {
-        background: url(/images/desktop/image-pocket-borealis.jpg) no-repeat;
+        background-image: url(/images/desktop/image-pocket-borealis.jpg);
     }
 
     .curiosity {
-        background: url(/images/desktop/image-curiosity.jpg) no-repeat;
+        background-image: url(/images/desktop/image-curiosity.jpg);
     }
 
     .fisheye {
-        background: url(/images/desktop/image-fisheye.jpg) no-repeat;
+        background-image: url(/images/desktop/image-fisheye.jpg);
     }
+
+
 
 
 
