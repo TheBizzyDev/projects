@@ -255,7 +255,7 @@ body {
 
 	/* Using Blend mode instead of adding a ::before overlay for hover
     affects */
-	background-color: rgba(0, 0, 0, 0.329);
+	background-color: rgba(0, 0, 0, 0.514);
 	background-blend-mode: multiply;
 }
 
