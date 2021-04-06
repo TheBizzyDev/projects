@@ -130,6 +130,10 @@ body {
 	align-items: center;
 }
 
+nav {
+	order: 3;
+}
+
 .navbar {
 	font-family: var(--ff-alata);
 	display: none;
@@ -146,7 +150,8 @@ body {
 }
 
 .hamburger {
-	display: inline-block;
+	display: flex;
+	position: relative;
 }
 
 /* LEADER SECTION */
@@ -247,6 +252,7 @@ body {
 	display: flex;
 	align-items: flex-end;
 	font-size: 1.4rem;
+	
     padding: 1rem;
 	text-transform: uppercase;
 	background-position: center;
@@ -255,11 +261,12 @@ body {
 
 	/* Using Blend mode instead of adding a ::before overlay for hover
     affects */
-	background-color: rgba(0, 0, 0, 0.514);
+	background-color: rgba(0, 0, 0, 0.245);
 	background-blend-mode: multiply;
 }
 
 .grid-basic:hover {
+	font-weight: var(--fw-400);
 	background-color: rgba(255, 255, 255, 0.644);
 	background-blend-mode: overlay;
 	color: black;
@@ -328,7 +335,11 @@ body {
 	}
 
 	.navbar {
-		display: flex;
+		order: 3;
+	}
+
+	.navbar-open {
+		display: block;
 	}
 
 	.hero-cta {
@@ -337,7 +348,9 @@ body {
 
 	.hamburger {
 		display: none;
+		order: 2;
 	}
+
 
 	/* LEADER SECTION */
 	.leader {
